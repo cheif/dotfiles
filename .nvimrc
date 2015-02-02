@@ -44,7 +44,11 @@ let g:ycm_filetypes_to_completely_ignore = {
     \ 'tex': 1,
     \}
 let g:ycm_seed_identifiers_with_syntax = 0
-"map gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
+map gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
+
+"Python
+let g:pymode_rope_goto_definition_bind = 'gd'
+let g:pymode_folding = 0
 
 
 "LaTeX
@@ -54,6 +58,10 @@ let g:tex_flavor='latex'
 
 "Javascript/JQuery
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+"Autoclose completion preview
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 "Mouse scroll
 set mouse=a
