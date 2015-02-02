@@ -30,6 +30,7 @@ Plugin 'kingbin/vim-arduino'
 Plugin 'sirtaj/vim-openscad'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'klen/python-mode'
 
 call vundle#end()
 
@@ -46,42 +47,16 @@ let g:ycm_seed_identifiers_with_syntax = 0
 "map gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 
-"Python
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
-autocmd FileType python map <buffer> <S-e> :w<CR>:!python % <CR>
-autocmd BufWritePre *.py :%s/\s\+$//e
-autocmd FileType python set colorcolumn=80
-
-"Ruby
-autocmd FileType ruby map <buffer> <S-e> :w<CR>:!ruby % <CR>
-
 "LaTeX
 autocmd FileType tex map <buffer> <S-e> :w<CR>:!pdflatex %<CR>
 autocmd FileType tex set spell
 let g:tex_flavor='latex'
 
-"SASS
-au BufRead,BufNewFile *.sass set filetype=sass
-
-"Mustache
-au BufRead,BufNewFile *.mustaches set filetype=html
-
 "Javascript/JQuery
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-"Autoclose omnicomplete previewwindow
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
 "Mouse scroll
 set mouse=a
-
-"Coffeescript
-hi link coffeeSpaceError NONE
-au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-
-"Powerline
-set laststatus=2
 
 "Crontab
 au FileType crontab set nobackup nowritebackup
