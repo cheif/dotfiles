@@ -31,6 +31,8 @@ Plugin 'sirtaj/vim-openscad'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/python-mode'
+Plugin 'cheif/tslime.vim'
+Plugin 'honza/dockerfile.vim'
 
 call vundle#end()
 
@@ -43,7 +45,8 @@ let g:ycm_filetypes_to_completely_ignore = {
     \ 'text': 1,
     \ 'tex': 1,
     \}
-let g:ycm_seed_identifiers_with_syntax = 0
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 map gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 "Python
@@ -79,9 +82,16 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+"Leader
+let mapleader=" "
+
 "Syntastic
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_stl_format='[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['java'] }
+
+"Tslime
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
