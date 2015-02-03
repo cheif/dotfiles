@@ -95,3 +95,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
 "Tslime
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
+
+" Redo last command
+nnoremap <Leader>r :call Send_keys_to_Tmux("Up Enter")
