@@ -33,6 +33,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/python-mode'
 Plugin 'cheif/tslime.vim'
 Plugin 'honza/dockerfile.vim'
+Plugin 'janko-m/vim-test'
 
 call vundle#end()
 
@@ -95,3 +96,9 @@ let g:syntastic_mode_map = { 'mode': 'active',
 "Tslime
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
+
+"Testing
+let g:test#strategy = 'tslime'
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>f :TestFile<CR>
+nmap <silent> <leader>r :TestLast<CR>
