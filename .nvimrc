@@ -13,7 +13,7 @@ set hlsearch
 set directory=~/.vim/tmp
 set backupdir=~/.vim/backup
 set hidden
-set statusline=%=%(%p%%%) 
+set laststatus=2
 
 "Fix backspace
 set bs=2
@@ -51,8 +51,10 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 map gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 "Python
-let g:pymode_rope_goto_definition_bind = 'gd'
+let g:pymode_rope = 0
 let g:pymode_folding = 0
+let g:pymode_run_bind = '<leader>e'
+au! FileType python setl nosmartindent
 
 
 "LaTeX
