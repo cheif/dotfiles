@@ -99,6 +99,7 @@ let g:tslime_always_current_window = 1
 
 "Testing
 let g:test#strategy = 'tslime'
+let g:test#python#runner = 'pytest'
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>f :TestFile<CR>
 nmap <silent> <leader>r :TestLast<CR>
