@@ -100,9 +100,11 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
 
+nmap <silent> <leader>r :call Send_keys_to_Tmux("Up Enter")<CR>
+
 "Testing
 let g:test#strategy = 'tslime'
 let g:test#python#runner = 'pytest'
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>f :TestFile<CR>
-nmap <silent> <leader>r :TestLast<CR>
+nmap <silent> <leader>l :TestLast<CR>
