@@ -34,6 +34,7 @@ Plugin 'klen/python-mode'
 Plugin 'cheif/tslime.vim'
 Plugin 'honza/dockerfile.vim'
 Plugin 'janko-m/vim-test'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 
