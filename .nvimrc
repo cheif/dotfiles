@@ -35,6 +35,7 @@ Plugin 'cheif/tslime.vim'
 Plugin 'honza/dockerfile.vim'
 Plugin 'janko-m/vim-test'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'wlangstroth/vim-racket'
 
 call vundle#end()
 
@@ -66,6 +67,11 @@ let g:tex_flavor='latex'
 "Javascript/JQuery
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
+"Racket
+au BufReadPost *.rkt,*.rktl set filetype=racket
+au FileType racket set lisp
+au FileType racket set autoindent
+
 "Autoclose completion preview
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -94,7 +100,7 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_stl_format='[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'passive_filetypes': ['java'] }
+                           \ 'passive_filetypes': ['java', 'racket'] }
 
 "Tslime
 let g:tslime_always_current_session = 1
