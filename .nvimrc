@@ -36,8 +36,11 @@ Plugin 'honza/dockerfile.vim'
 Plugin 'janko-m/vim-test'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wlangstroth/vim-racket'
+Plugin 'NLKNguyen/papercolor-theme'
 
 call vundle#end()
+
+colorscheme PaperColor
 
 filetype plugin indent on
 
@@ -114,3 +117,6 @@ let g:test#python#runner = 'pytest'
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>f :TestFile<CR>
 nmap <silent> <leader>l :TestLast<CR>
+
+"pytest-runner
+" nmap <silent> <leader>t :RunCurrentTest<CR>
