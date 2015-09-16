@@ -37,6 +37,9 @@ Plugin 'janko-m/vim-test'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'moll/vim-node'
+Plugin 'pangloss/vim-javascript'
+Plugin 'strogonoff/vim-coffee-script'
 
 call vundle#end()
 
@@ -46,11 +49,11 @@ filetype plugin indent on
 
 "YouCompleteMe
 let g:ycm_filetypes_to_completely_ignore = {
-    \ 'notes': 1,
-    \ 'markdown': 1,
-    \ 'text': 1,
-    \ 'tex': 1,
-    \}
+            \ 'notes': 1,
+            \ 'markdown': 1,
+            \ 'text': 1,
+            \ 'tex': 1,
+            \}
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 map gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
@@ -67,8 +70,16 @@ autocmd FileType tex map <buffer> <S-e> :w<CR>:!pdflatex %<CR>
 autocmd FileType tex set spell
 let g:tex_flavor='latex'
 
-"Javascript/JQuery
+"Javascript/JQuery/Coffeescript
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+autocmd FileType javascript set shiftwidth=2
+autocmd FileType javascript set softtabstop=2
+autocmd FileType javascript set tabstop=2
+au BufRead,BufNewFile *.coffee set ft=coffee
+autocmd FileType coffee set shiftwidth=2
+autocmd FileType coffee set softtabstop=2
+autocmd FileType coffee set tabstop=2
+
 
 "Racket
 au BufReadPost *.rkt,*.rktl set filetype=racket
