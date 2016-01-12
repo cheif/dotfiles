@@ -43,8 +43,8 @@ export CPLUS_INCLUDE_PATH=/usr/include:/usr/local/include
 # Set docker env
 export DOCKER_TLS_VERIFY="1"
 export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH=$HOME/.docker/machine/machines/docker-vm
-export DOCKER_MACHINE_NAME="docker-vm"
+export DOCKER_CERT_PATH="$HOME/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
 
 # added by travis gem
 [ -f /Users/jag/.travis/travis.sh ] && source /Users/jag/.travis/travis.sh

@@ -1,1 +1,1 @@
-.nvimrc
+/Users/jag/.config/nvim/init.vim
