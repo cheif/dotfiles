@@ -24,7 +24,6 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kingbin/vim-arduino'
 Plugin 'sirtaj/vim-openscad'
@@ -40,6 +39,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'moll/vim-node'
 Plugin 'pangloss/vim-javascript'
 Plugin 'strogonoff/vim-coffee-script'
+Plugin 'benekastah/neomake'
 
 call vundle#end()
 
@@ -109,12 +109,8 @@ noremap   <Right>  <NOP>
 "Leader
 let mapleader=" "
 
-"Syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_stl_format='[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'passive_filetypes': ['java', 'racket'] }
+"Neomake
+autocmd! BufWritePost * Neomake
 
 "Tslime
 let g:tslime_always_current_session = 1
