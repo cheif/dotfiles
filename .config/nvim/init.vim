@@ -64,6 +64,8 @@ let g:pymode_folding = 0
 let g:pymode_run_bind = '<leader>e'
 au! FileType python setl nosmartindent
 
+"Javascript/json
+autocmd BufReadPost *.json %!python -m json.tool
 
 "LaTeX
 autocmd FileType tex map <buffer> <S-e> :w<CR>:!pdflatex %<CR>
