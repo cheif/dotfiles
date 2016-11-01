@@ -15,6 +15,7 @@ plugins=(git brew pip cabal coffee docker git-extras httpie python sudo tmux)
 export EDITOR=vim
 export REPORTTIME=20
 export TERM=screen-256color
+export HISTSIZE=1000000
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,12 +40,3 @@ alias vim="nvim"
 # Libraries for osx 10.10
 export C_INCLUDE_PATH=/usr/include:/usr/local/include
 export CPLUS_INCLUDE_PATH=/usr/include:/usr/local/include
-
-# Set docker env
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="$HOME/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
-
-# added by travis gem
-[ -f /Users/jag/.travis/travis.sh ] && source /Users/jag/.travis/travis.sh
