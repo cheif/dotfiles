@@ -129,3 +129,7 @@ nmap <silent> <leader>l :TestLast<CR>
 
 "pytest-runner
 " nmap <silent> <leader>t :RunCurrentTest<CR>
+
+"XVim
+nmap gd <c-]>
+nmap gb <c-t>
