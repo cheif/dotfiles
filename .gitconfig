@@ -1,0 +1,14 @@
+[user]
+	name = Dan Berglund
+	email = berglund.dan@gmail.com
+[push]
+	default = simple
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+[merge]
+	ff = only
+	tool = vimdiff
+[pull]
+	rebase = true
+[diff]
+	tool = vimdiff
