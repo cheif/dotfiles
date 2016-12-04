@@ -132,4 +132,5 @@ nmap <silent> <leader>l :TestLast<CR>
 
 "XVim
 nmap gd <c-]>
-nmap gb <c-t>
+nmap gb :xccmd goBackInHistoryByCommand<CR>
+nmap gf :xccmd goForwardInHistoryByCommand<CR>

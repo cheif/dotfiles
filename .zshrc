@@ -36,6 +36,7 @@ bindkey 'OD' backward-word
 #Alias
 alias awx="ssh -t awx tmux attach -d -t dan"
 alias vim="nvim"
+alias fix="git diff --name-only | uniq | xargs -o vim"
 
 # Libraries for osx 10.10
 export C_INCLUDE_PATH=/usr/include:/usr/local/include
