@@ -1,6 +1,6 @@
 [user]
 	name = Dan Berglund
-	email = berglund.dan@gmail.com
+	email = dan@berglund.io
 [push]
 	default = simple
 [alias]
@@ -12,3 +12,10 @@
 	rebase = true
 [diff]
 	tool = vimdiff
+
+[init]
+    templatedir = ~/.git/templates/
+
+[bontouch]
+    email = dan.berglund@bontouch.com
+    regex = "*/bontouch/*"
