@@ -1,5 +1,4 @@
 "General
-syntax on
 set number
 set shiftwidth=4
 set tabstop=4
@@ -14,6 +13,7 @@ set directory=~/.vim/tmp
 set backupdir=~/.vim/backup
 set hidden
 set laststatus=2
+filetype off
 
 "Fix backspace
 set bs=2
@@ -40,12 +40,15 @@ Plugin 'moll/vim-node'
 Plugin 'pangloss/vim-javascript'
 Plugin 'strogonoff/vim-coffee-script'
 Plugin 'benekastah/neomake'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 
 call vundle#end()
 
 colorscheme PaperColor
 
 filetype plugin indent on
+syntax on
 
 "YouCompleteMe
 let g:ycm_filetypes_to_completely_ignore = {
@@ -77,11 +80,13 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 autocmd FileType javascript set shiftwidth=2
 autocmd FileType javascript set softtabstop=2
 autocmd FileType javascript set tabstop=2
+autocmd FileType typescript set shiftwidth=2
+autocmd FileType typescript set softtabstop=2
+autocmd FileType typescript set tabstop=2
 au BufRead,BufNewFile *.coffee set ft=coffee
 autocmd FileType coffee set shiftwidth=2
 autocmd FileType coffee set softtabstop=2
 autocmd FileType coffee set tabstop=2
-
 
 "Racket
 au BufReadPost *.rkt,*.rktl set filetype=racket
