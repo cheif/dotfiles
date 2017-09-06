@@ -41,3 +41,9 @@ alias fix="git diff --name-only | uniq | xargs -o vim"
 # Libraries for osx 10.10
 export C_INCLUDE_PATH=/usr/include:/usr/local/include
 export CPLUS_INCLUDE_PATH=/usr/include:/usr/local/include
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jag/repos/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jag/repos/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jag/repos/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jag/repos/google-cloud-sdk/completion.zsh.inc'; fi
