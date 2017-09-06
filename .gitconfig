@@ -19,3 +19,5 @@
 [bontouch]
     email = dan.berglund@bontouch.com
     regex = "*/bontouch/*"
+[core]
+	editor = nvim

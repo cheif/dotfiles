@@ -10,9 +10,9 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew pip cabal coffee docker git-extras httpie python sudo tmux)
+plugins=(git brew pip cabal coffee docker git-extras httpie python tmux)
 
-export EDITOR=vim
+export EDITOR=nvim
 export REPORTTIME=20
 export TERM=screen-256color
 export HISTSIZE=1000000

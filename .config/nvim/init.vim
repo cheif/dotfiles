@@ -36,6 +36,7 @@ Plugin 'janko-m/vim-test'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'moll/vim-node'
 Plugin 'pangloss/vim-javascript'
 Plugin 'strogonoff/vim-coffee-script'
@@ -45,10 +46,11 @@ Plugin 'peitalin/vim-jsx-typescript'
 
 call vundle#end()
 
-colorscheme PaperColor
-
 filetype plugin indent on
-syntax on
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
 "YouCompleteMe
 let g:ycm_filetypes_to_completely_ignore = {
@@ -87,6 +89,7 @@ au BufRead,BufNewFile *.coffee set ft=coffee
 autocmd FileType coffee set shiftwidth=2
 autocmd FileType coffee set softtabstop=2
 autocmd FileType coffee set tabstop=2
+autocmd BufWritePre * %s/\s\+$//e
 
 "Racket
 au BufReadPost *.rkt,*.rktl set filetype=racket
