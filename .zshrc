@@ -15,7 +15,9 @@ plugins=(git brew pip cabal coffee docker git-extras httpie python tmux)
 export EDITOR=nvim
 export REPORTTIME=20
 export TERM=screen-256color
+export HISTFILE=~/.zsh_history
 export HISTSIZE=1000000
+export SAVEHIST=$HISTSIZE
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,7 +38,7 @@ bindkey 'OD' backward-word
 #Alias
 alias awx="ssh -t awx tmux attach -d -t dan"
 alias vim="nvim"
-alias fix="git diff --name-only | uniq | xargs -o vim"
+alias fix="git diff --name-only | uniq | tr '\n' '\0' | xargs -0 -o vim"
 
 # Libraries for osx 10.10
 export C_INCLUDE_PATH=/usr/include:/usr/local/include
@@ -47,3 +49,7 @@ if [ -f '/Users/jag/repos/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jag/repos/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jag/repos/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Arduino
+export PATH=/Volumes/case-sensitive/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
+export SDK_PATH=/Users/jag/repos/esp-open-rtos

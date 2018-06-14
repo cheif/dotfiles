@@ -43,6 +43,8 @@ Plugin 'strogonoff/vim-coffee-script'
 Plugin 'benekastah/neomake'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'udalov/kotlin-vim'
+Plugin 'keith/swift.vim'
 
 call vundle#end()
 
@@ -138,7 +140,7 @@ nmap <silent> <leader>l :TestLast<CR>
 "pytest-runner
 " nmap <silent> <leader>t :RunCurrentTest<CR>
 
-"XVim
+"XVim: https://github.com/XVimProject/XVim/blob/master/Documents/Developers/MenuActionList.txt
 nmap gd <c-]>
 nmap gb :xccmd goBackInHistoryByCommand<CR>
 nmap gf :xccmd goForwardInHistoryByCommand<CR>
