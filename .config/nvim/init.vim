@@ -144,3 +144,4 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap gd <c-]>
 nmap gb :xccmd goBackInHistoryByCommand<CR>
 nmap gf :xccmd goForwardInHistoryByCommand<CR>
+set tags=tags
