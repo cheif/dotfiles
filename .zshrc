@@ -47,5 +47,4 @@ if [ -f '/Users/jag/repos/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/
 if [ -f '/Users/jag/repos/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jag/repos/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Arduino
-export PATH=/Volumes/case-sensitive/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
-export SDK_PATH=/Users/jag/repos/esp-open-rtos
+export SDK_PATH=/Users/jag/repos/homekit/esp-open-rtos
