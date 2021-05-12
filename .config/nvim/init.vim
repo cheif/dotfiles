@@ -28,7 +28,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'kingbin/vim-arduino'
 Plugin 'sirtaj/vim-openscad'
 Plugin 'fatih/vim-go'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/python-mode'
 Plugin 'cheif/tslime.vim'
 Plugin 'honza/dockerfile.vim'
@@ -45,6 +45,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'udalov/kotlin-vim'
 Plugin 'keith/swift.vim'
+Plugin 'elmcast/elm-vim'
 
 call vundle#end()
 
@@ -144,3 +145,5 @@ nmap gd <c-]>
 nmap gb :xccmd goBackInHistoryByCommand<CR>
 nmap gf :xccmd goForwardInHistoryByCommand<CR>
 set tags=tags
+
+set nofoldenable
