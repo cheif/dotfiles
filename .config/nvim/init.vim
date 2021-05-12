@@ -50,8 +50,7 @@ call vundle#end()
 
 filetype plugin indent on
 syntax enable
-set background=dark
-let g:solarized_termcolors=256
+set background=light
 colorscheme solarized
 
 "YouCompleteMe
