@@ -1,6 +1,7 @@
 [user]
 	name = Dan Berglund
 	email = dan@berglund.io
+	signingkey = 22DD4730D71EC4EC
 [push]
 	default = simple
 [alias]
@@ -21,3 +22,5 @@
     regex = "*/bontouch/*"
 [core]
 	editor = nvim
+[commit]
+	gpgsign = true
