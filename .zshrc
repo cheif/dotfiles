@@ -29,22 +29,24 @@ export PATH=$PATH:/Developer/android/tools:/Developer/android/platform-tools:~/L
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 export GOPATH=$HOME/go
 
-bindkey -e
-bindkey '[C' forward-word
-bindkey '[D' backward-word
-bindkey 'OC' forward-word
-bindkey 'OD' backward-word
-
 #Alias
 alias awx="ssh -t awx tmux attach -d -t dan"
 alias vim="nvim"
 alias fix="git diff --name-only | uniq | tr '\n' '\0' | xargs -0 -o vim"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jag/repos/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jag/repos/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jag/repos/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jag/repos/google-cloud-sdk/completion.zsh.inc'; fi
+gifify() {
+    ffmpeg -i "$1" -filter:v scale=400:-1 -pix_fmt rgb24 -r 30 -f gif - | gifsicle --optimize=3
+}
 
 # Arduino
 export SDK_PATH=/Users/jag/repos/homekit/esp-open-rtos
+export GPG_TTY=$(tty)
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jag/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jag/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jag/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jag/google-cloud-sdk/completion.zsh.inc'; fi
