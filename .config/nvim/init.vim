@@ -44,6 +44,22 @@ Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'udalov/kotlin-vim'
 Plugin 'keith/swift.vim'
 Plugin 'elmcast/elm-vim'
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'mhartington/nvim-typescript', {'do': 'UpdateRemotePlugins'}
+Plugin 'Shougo/deoplete.nvim'
+
+"Syntastic
+Plugin 'vim-syntastic/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_python_exec = 'python3'
 
 call vundle#end()
 
@@ -55,6 +71,7 @@ set background=light
 let g:pymode_rope = 0
 let g:pymode_folding = 0
 let g:pymode_run_bind = '<leader>e'
+let g:pymode_python = 'python3'
 au! FileType python setl nosmartindent
 
 "Javascript/json
@@ -133,3 +150,10 @@ nmap gf :xccmd goForwardInHistoryByCommand<CR>
 set tags=tags
 
 set nofoldenable
+
+"Typescript
+let g:deoplete#enable_at_startup = 1
+autocmd FileType typescript set shiftwidth=2
+autocmd FileType typescript set softtabstop=2
+autocmd FileType typescript set tabstop=2
+autocmd FileType typescript nmap gd :TSDef<CR>
