@@ -74,12 +74,6 @@ let g:pymode_run_bind = '<leader>e'
 let g:pymode_python = 'python3'
 au! FileType python setl nosmartindent
 
-"Javascript/json
-autocmd BufReadPost *.json %!python -m json.tool
-
-"YAML
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
 "LaTeX
 autocmd FileType tex map <buffer> <S-e> :w<CR>:!pdflatex %<CR>
 autocmd FileType tex set spell
