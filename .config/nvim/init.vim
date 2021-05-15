@@ -28,7 +28,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'kingbin/vim-arduino'
 Plugin 'sirtaj/vim-openscad'
 Plugin 'fatih/vim-go'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/python-mode'
 Plugin 'cheif/tslime.vim'
 Plugin 'honza/dockerfile.vim'
@@ -40,7 +39,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'moll/vim-node'
 Plugin 'pangloss/vim-javascript'
 Plugin 'strogonoff/vim-coffee-script'
-Plugin 'benekastah/neomake'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'udalov/kotlin-vim'
@@ -52,17 +50,6 @@ call vundle#end()
 filetype plugin indent on
 syntax enable
 set background=light
-
-"YouCompleteMe
-let g:ycm_filetypes_to_completely_ignore = {
-            \ 'notes': 1,
-            \ 'markdown': 1,
-            \ 'text': 1,
-            \ 'tex': 1,
-            \}
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-map gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 "Python
 let g:pymode_rope = 0
@@ -122,9 +109,6 @@ noremap   <Right>  <NOP>
 
 "Leader
 let mapleader=" "
-
-"Neomake
-autocmd! BufWritePost * Neomake
 
 "Tslime
 let g:tslime_always_current_session = 1
