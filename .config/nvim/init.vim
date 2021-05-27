@@ -52,7 +52,6 @@ call vundle#end()
 filetype plugin indent on
 syntax enable
 set background=light
-colorscheme solarized
 
 "YouCompleteMe
 let g:ycm_filetypes_to_completely_ignore = {
