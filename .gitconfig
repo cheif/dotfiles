@@ -1,7 +1,7 @@
 [user]
 	name = Dan Berglund
 	email = dan@berglund.io
-	signingkey = 22DD4730D71EC4EC
+	signingkey = C4C1DC3BDFB416DC
 [push]
 	default = simple
 [alias]
