@@ -47,7 +47,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': 'UpdateRemotePlugins'}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'kristijanhusak/orgmode.nvim'
+Plug 'kristijanhusak/orgmode.nvim', {'tag': '0.1'}
 Plug 'vim-syntastic/syntastic'
 
 call plug#end()
