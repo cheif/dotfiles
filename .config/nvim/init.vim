@@ -18,40 +18,41 @@ filetype off
 "Fix backspace
 set bs=2
 
-"Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"Plugins
+call plug#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kingbin/vim-arduino'
-Plugin 'sirtaj/vim-openscad'
-Plugin 'fatih/vim-go'
-Plugin 'klen/python-mode'
-Plugin 'cheif/tslime.vim'
-Plugin 'honza/dockerfile.vim'
-Plugin 'janko-m/vim-test'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'wlangstroth/vim-racket'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'moll/vim-node'
-Plugin 'pangloss/vim-javascript'
-Plugin 'strogonoff/vim-coffee-script'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
-Plugin 'udalov/kotlin-vim'
-Plugin 'keith/swift.vim'
-Plugin 'elmcast/elm-vim'
-Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'mhartington/nvim-typescript', {'do': 'UpdateRemotePlugins'}
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'nvim-treesitter/nvim-treesitter'
-Plugin 'kristijanhusak/orgmode.nvim'
+Plug 'gmarik/Vundle.vim'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'kingbin/vim-arduino'
+Plug 'sirtaj/vim-openscad'
+Plug 'fatih/vim-go'
+Plug 'klen/python-mode'
+Plug 'cheif/tslime.vim'
+Plug 'honza/dockerfile.vim'
+Plug 'janko-m/vim-test'
+Plug 'plasticboy/vim-markdown'
+Plug 'wlangstroth/vim-racket'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'altercation/vim-colors-solarized'
+Plug 'moll/vim-node'
+Plug 'pangloss/vim-javascript'
+Plug 'strogonoff/vim-coffee-script'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'udalov/kotlin-vim'
+Plug 'keith/swift.vim'
+Plug 'elmcast/elm-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': 'UpdateRemotePlugins'}
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'kristijanhusak/orgmode.nvim'
+Plug 'vim-syntastic/syntastic'
+
+call plug#end()
 
 "Syntastic
-Plugin 'vim-syntastic/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -62,8 +63,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_python_exec = 'python3'
-
-call vundle#end()
 
 filetype plugin indent on
 syntax enable
