@@ -32,7 +32,7 @@ export GOPATH=$HOME/go
 #Alias
 alias awx="ssh -t awx tmux attach -d -t dan"
 alias vim="nvim"
-alias fix="git diff --name-only | uniq | tr '\n' '\0' | xargs -0 -o vim"
+alias fix="git diff --name-only | uniq | tr '\n' '\0' | xargs -0 -o nvim"
 alias fixup="git commit -nm 'fix' && git rebase -i master"
 
 gifify() {
