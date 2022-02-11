@@ -47,7 +47,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': 'UpdateRemotePlugins'}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'kristijanhusak/orgmode.nvim', {'tag': '0.1'}
+Plug 'kristijanhusak/orgmode.nvim', {'tag': 'ts-org-1.0.0'}
 Plug 'vim-syntastic/syntastic'
 
 call plug#end()
@@ -165,15 +165,7 @@ parser_config.org = {
   filetype = 'org',
 }
 
-require'nvim-treesitter.configs'.setup {
-  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
-  highlight = {
-    enable = true,
-    disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
-    additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
-  },
-  ensure_installed = {'org'}, -- Or run :TSUpdate org
-}
+require('orgmode').setup_ts_grammar()
 
 require('orgmode').setup({
   org_agenda_files = {'~/repos/org/*'},
