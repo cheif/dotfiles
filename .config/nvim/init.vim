@@ -46,7 +46,7 @@ Plug 'elmcast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'kristijanhusak/orgmode.nvim', {'tag': '0.2'}
+Plug 'kristijanhusak/orgmode.nvim', {'tag': '0.2.1'}
 Plug 'vim-syntastic/syntastic'
 
 call plug#end()
