@@ -33,7 +33,6 @@ Plug 'honza/dockerfile.vim'
 Plug 'janko-m/vim-test'
 Plug 'plasticboy/vim-markdown'
 Plug 'wlangstroth/vim-racket'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'altercation/vim-colors-solarized'
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
@@ -66,6 +65,7 @@ let g:syntastic_python_python_exec = 'python3'
 filetype plugin indent on
 syntax enable
 set background=light
+colorscheme solarized
 
 "Python
 let g:pymode_rope = 0
