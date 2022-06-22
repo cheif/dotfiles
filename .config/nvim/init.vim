@@ -45,7 +45,7 @@ Plug 'elmcast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'kristijanhusak/orgmode.nvim', {'tag': '0.2.1'}
+Plug 'kristijanhusak/orgmode.nvim', {'branch': 'master'}
 Plug 'vim-syntastic/syntastic'
 
 call plug#end()
@@ -151,17 +151,18 @@ autocmd FileType typescript nmap gd :TSDef<CR>
 
 "Org mode
 lua << EOF
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.org = {
-  install_info = {
-    url = 'https://github.com/milisims/tree-sitter-org',
-    revision = 'main',
-    files = {'src/parser.c', 'src/scanner.cc'},
+require('orgmode').setup_ts_grammar()
+
+-- Tree-sitter configuration
+require'nvim-treesitter.configs'.setup {
+  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
   },
-  filetype = 'org',
+  ensure_installed = {'org'}, -- Or run :TSUpdate org
 }
 
-require('orgmode').setup_ts_grammar()
 
 require('orgmode').setup({
   org_agenda_files = {'~/repos/org/*'},
