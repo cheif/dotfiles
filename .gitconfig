@@ -15,6 +15,7 @@
 
 [init]
     templatedir = ~/.git/templates/
+	defaultBranch = main
 
 [bontouch]
     email = dan.berglund@bontouch.com
