@@ -148,6 +148,10 @@ autocmd FileType typescript set shiftwidth=2
 autocmd FileType typescript set softtabstop=2
 autocmd FileType typescript set tabstop=2
 autocmd FileType typescript nmap gd :TSDef<CR>
+autocmd FileType typescriptreact set shiftwidth=2
+autocmd FileType typescriptreact set softtabstop=2
+autocmd FileType typescriptreact set tabstop=2
+autocmd FileType typescriptreact nmap gd :TSDef<CR>
 
 "Org mode
 lua << EOF
