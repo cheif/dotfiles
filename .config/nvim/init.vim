@@ -44,7 +44,7 @@ Plug 'keith/swift.vim'
 Plug 'elmcast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate' }
 Plug 'kristijanhusak/orgmode.nvim', {'branch': 'master'}
 Plug 'vim-syntastic/syntastic'
 
