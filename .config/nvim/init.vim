@@ -46,7 +46,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate' }
 Plug 'kristijanhusak/orgmode.nvim', {'branch': 'master'}
-Plug 'vim-syntastic/syntastic'
 
 "LSP-support
 Plug 'neovim/nvim-lspconfig'
@@ -54,18 +53,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-lsp-compl'
 
 call plug#end()
-
-"Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_python_python_exec = 'python3'
 
 filetype plugin indent on
 syntax enable
