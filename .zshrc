@@ -33,7 +33,7 @@ export GOPATH=$HOME/go
 alias awx="ssh -t awx tmux attach -d -t dan"
 alias vim="nvim"
 alias fix="git diff --name-only | uniq | tr '\n' '\0' | xargs -0 -o nvim"
-alias fixup="git commit -nm 'fix' && git rebase -i master"
+alias fixup="git commit -nm 'fix' && git rebase -i main"
 
 gifify() {
     ffmpeg -i "$1" -filter:v scale=400:-1 -pix_fmt rgb24 -r 30 -f gif - | gifsicle --optimize=3
