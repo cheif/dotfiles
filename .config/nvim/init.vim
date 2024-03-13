@@ -57,7 +57,7 @@ call plug#end()
 
 filetype plugin indent on
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 
 "Python
@@ -165,6 +165,7 @@ require'nvim-treesitter.configs'.setup {
 require('orgmode').setup({
   org_agenda_files = {'~/repos/org/*'},
   org_default_notes_file = '~/repos/org/M.org',
+  org_log_into_drawer = 'LOGBOOK'
 })
 EOF
 
