@@ -10,7 +10,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew pip cabal coffee docker git-extras httpie python tmux)
+plugins=(git brew pip cabal coffee docker git-extras httpie python tmux gh)
 
 export EDITOR=nvim
 export REPORTTIME=20
@@ -34,6 +34,10 @@ alias awx="ssh -t awx tmux attach -d -t dan"
 alias vim="nvim"
 alias fix="git diff --name-only | uniq | tr '\n' '\0' | xargs -0 -o nvim"
 alias fixup="git commit -nm 'fix' && git rebase -i main"
+
+# Vim-mode, but with emacs binding for history-search
+bindkey -v
+bindkey "^R" history-incremental-search-backward
 
 gifify() {
     ffmpeg -i "$1" -filter:v scale=400:-1 -pix_fmt rgb24 -r 30 -f gif - | gifsicle --optimize=3
