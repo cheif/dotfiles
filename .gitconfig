@@ -12,7 +12,7 @@
 [pull]
 	rebase = true
 [diff]
-	tool = vimdiff
+	tool = nvimdiff
 
 [init]
     templatedir = ~/.git/templates/
@@ -25,3 +25,11 @@
 	editor = nvim
 [commit]
 	gpgsign = true
+[rerere]
+	enabled = true
+[branch]
+	sort = -committerdate
+[column]
+	ui = auto
+[maintenance]
+	repo = /Users/jag/clones/vcm/ios
