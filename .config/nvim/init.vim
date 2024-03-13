@@ -37,8 +37,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
 Plug 'strogonoff/vim-coffee-script'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'udalov/kotlin-vim'
 Plug 'keith/swift.vim'
 Plug 'elmcast/elm-vim'
@@ -156,7 +154,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
   },
-  ensure_installed = {'org', 'swift', 'rust', 'toml'}, -- Or run :TSUpdate org
+  ensure_installed = {'org', 'swift', 'rust', 'toml', 'go', 'typescript', 'tsx', 'beancount'}, -- Or run :TSUpdate org
   auto_install = true,
 }
 
@@ -176,6 +174,17 @@ lspconfig.rust_analyzer.setup{
     on_attach = on_attach
 }
 
+lspconfig.gopls.setup{
+    on_attach = on_attach
+}
+
+lspconfig.tsserver.setup{
+    on_attach = on_attach
+}
+
+lspconfig.beancount.setup{
+}
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -189,9 +198,6 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }
