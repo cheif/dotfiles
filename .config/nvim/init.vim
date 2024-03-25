@@ -41,7 +41,6 @@ Plug 'udalov/kotlin-vim'
 Plug 'keith/swift.vim'
 Plug 'elmcast/elm-vim'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate' }
 Plug 'kristijanhusak/orgmode.nvim', {'branch': 'master'}
 
@@ -134,17 +133,6 @@ nmap gf :xccmd goForwardInHistoryByCommand<CR>
 set tags=tags
 
 set nofoldenable
-
-"Typescript
-let g:deoplete#enable_at_startup = 1
-autocmd FileType typescript set shiftwidth=2
-autocmd FileType typescript set softtabstop=2
-autocmd FileType typescript set tabstop=2
-autocmd FileType typescript nmap gd :TSDef<CR>
-autocmd FileType typescriptreact set shiftwidth=2
-autocmd FileType typescriptreact set softtabstop=2
-autocmd FileType typescriptreact set tabstop=2
-autocmd FileType typescriptreact nmap gd :TSDef<CR>
 
 "Org mode
 lua << EOF
