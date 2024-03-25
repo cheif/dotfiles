@@ -1,6 +1,7 @@
 [user]
 	name = Dan Berglund
 	email = dan@berglund.io
+	signingkey = /Users/dberglu1/.ssh/id_ed25519.pub
 [push]
 	default = simple
     autoSetupRemote = true
@@ -33,3 +34,5 @@
 	ui = auto
 [maintenance]
 	repo = /Users/jag/clones/vcm/ios
+[gpg]
+	format = ssh
