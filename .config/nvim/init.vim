@@ -33,7 +33,7 @@ Plug 'honza/dockerfile.vim'
 Plug 'janko-m/vim-test'
 Plug 'plasticboy/vim-markdown'
 Plug 'wlangstroth/vim-racket'
-Plug 'altercation/vim-colors-solarized'
+Plug 'shaunsingh/solarized.nvim'
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
 Plug 'strogonoff/vim-coffee-script'
@@ -56,7 +56,7 @@ call plug#end()
 
 filetype plugin indent on
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
 "Python
