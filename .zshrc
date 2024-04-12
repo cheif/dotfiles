@@ -22,7 +22,7 @@ export SAVEHIST=$HISTSIZE
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/Developer/android/tools:/Developer/android/platform-tools:~/Library/haskell/bin/
+export PATH=$PATH:/Developer/android/tools:/Developer/android/platform-tools:~/Library/haskell/bin/:~/.cargo/bin
 
 # GO
 # export GOROOT=/usr/local/go
@@ -51,7 +51,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jag/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jag/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/dberglu1/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dberglu1/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/jag/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jag/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/dberglu1/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dberglu1/google-cloud-sdk/completion.zsh.inc'; fi
