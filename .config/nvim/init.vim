@@ -47,7 +47,8 @@ Plug 'kristijanhusak/orgmode.nvim', {'branch': 'master'}
 "LSP-support
 Plug 'neovim/nvim-lspconfig'
 "Autocomplete-support for LSP
-Plug 'mfussenegger/nvim-lsp-compl'
+Plug 'hrsh7th/nvim-cmp' "Autocompletion plugin
+Plug 'hrsh7th/cmp-nvim-lsp' "LSP source for nvim-cmp
 "Fuzzy finding
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -157,26 +158,47 @@ EOF
 
 " LSP
 lua << EOF
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
-local on_attach = require('lsp_compl').attach
+local servers = { 'rust_analyzer', 'gopls', 'tsserver', 'beancount', 'sourcekit' }
 
-lspconfig.rust_analyzer.setup{
-    on_attach = on_attach
-}
+for _, server in ipairs(servers) do
+  lspconfig[server].setup {
+    capabilities = capabilities,
+  }
+end
 
-lspconfig.gopls.setup{
-    on_attach = on_attach
-}
-
-lspconfig.tsserver.setup{
-    on_attach = on_attach
-}
-
-lspconfig.beancount.setup{
-}
-
-lspconfig.sourcekit.setup{
-    on_attach = on_attach
+-- nvim-cmp setup
+local cmp = require 'cmp'
+cmp.setup {
+  mapping = cmp.mapping.preset.insert({
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
+    ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
+    -- C-b (back) C-f (forward) for snippet placeholder navigation.
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  }),
+  sources = {
+    { name = 'nvim_lsp' },
+  },
 }
 
 -- Mappings.
