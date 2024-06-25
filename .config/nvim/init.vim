@@ -175,6 +175,10 @@ lspconfig.tsserver.setup{
 lspconfig.beancount.setup{
 }
 
+lspconfig.sourcekit.setup{
+    on_attach = on_attach
+}
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
