@@ -24,6 +24,7 @@
     regex = "*/bontouch/*"
 [core]
 	editor = nvim
+	untrackedCache = /usr/bin/true
 [commit]
 	gpgsign = true
 [rerere]
@@ -36,3 +37,5 @@
 	repo = /Users/jag/clones/vcm/ios
 [gpg]
 	format = ssh
+[rebase]
+	autoStash = true
