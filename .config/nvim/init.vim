@@ -161,13 +161,26 @@ lua << EOF
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
-local servers = { 'rust_analyzer', 'gopls', 'tsserver', 'beancount', 'sourcekit' }
 
-for _, server in ipairs(servers) do
-  lspconfig[server].setup {
-    capabilities = capabilities,
-  }
-end
+lspconfig.rust_analyzer.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.gopls.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.tsserver.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.beancount.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.sourcekit.setup {
+  capabilities = capabilities,
+}
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
