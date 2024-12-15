@@ -21,6 +21,39 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.opt.number = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
+vim.opt.smarttab = true
+vim.opt.smartindent = true
+vim.opt.foldenable = false
+
+local opts = { noremap=true, silent=true }
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+
+
+-- Terminal settings
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]],{noremap=true})
+
+local terminal_channel = nil
+vim.keymap.set('n', '<space>r', function()
+    -- If we don't have a terminal open, open one and wait for command
+    if not terminal_channel then
+        vim.cmd.vnew()
+        vim.cmd.term()
+        vim.cmd.wincmd("L")
+        vim.cmd.startinsert()
+        terminal_channel = vim.bo.channel
+    else
+        -- If terminal is already open, simulate pressing up and hitting return, to re-run last command
+        local keys = vim.api.nvim_replace_termcodes('<C-u>!!<CR><CR>', true, true, true)
+        vim.fn.chansend(terminal_channel, keys)
+    end
+end)
+
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
