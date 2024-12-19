@@ -49,11 +49,11 @@ vim.keymap.set('n', '<space>r', function()
     else
         -- Terminal is already open
         -- Send Ctrl-C first
-        local keys = vim.api.nvim_replace_termcodes('<C-c>!!<CR><CR>', true, true, true)
+        local keys = vim.api.nvim_replace_termcodes('<C-c>', true, true, true)
         vim.fn.chansend(terminal_channel, keys)
 
-        -- simulate pressing up and hitting return, to re-run last command
-        local keys = vim.api.nvim_replace_termcodes('<C-u>!!<CR><CR>', true, true, true)
+        -- re-run last command
+        local keys = vim.api.nvim_replace_termcodes('!!<CR><CR>', true, true, true)
         vim.fn.chansend(terminal_channel, keys)
     end
 end)
