@@ -8,7 +8,7 @@ return {
             configs = require('nvim-treesitter.configs')
             configs.setup {
                 highlight = { enable = false },
-		indent = { enable = true },
+                indent = { enable = true },
                 ensure_installed = {
                     'org', 'swift', 'rust', 'toml', 'go', 'typescript', 'tsx', 'beancount', 
                     'lua',
