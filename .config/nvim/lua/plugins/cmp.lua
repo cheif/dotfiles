@@ -18,6 +18,7 @@ return {
                 -- Where to get completion results from
                 sources = cmp.config.sources {
                     { name = "nvim_lsp" },
+                    { name = "orgmode" },
                 },
                 -- Make 'enter' key select the completion
                 mapping = cmp.mapping.preset.insert({
