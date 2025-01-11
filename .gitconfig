@@ -24,7 +24,7 @@
     regex = "*/bontouch/*"
 [core]
 	editor = nvim
-	untrackedCache = /usr/bin/true
+	untrackedCache = true
 [commit]
 	gpgsign = true
 [rerere]
@@ -35,6 +35,7 @@
 	ui = auto
 [maintenance]
 	repo = /Users/jag/clones/vcm/ios
+	repo = /Users/dberglu1/clones/volvo-cars/volvo-cars-ios
 [gpg]
 	format = ssh
 [rebase]
