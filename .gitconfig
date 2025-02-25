@@ -4,7 +4,8 @@
 	signingkey = /Users/dberglu1/.ssh/id_ed25519.pub
 [push]
 	default = simple
-    autoSetupRemote = true
+	autoSetupRemote = true
+	followTags = true
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 [merge]
@@ -14,6 +15,10 @@
 	rebase = true
 [diff]
 	tool = nvimdiff
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 
 [init]
     templatedir = ~/.git/templates/
@@ -27,8 +32,10 @@
 	untrackedCache = true
 [commit]
 	gpgsign = true
+	verbose = true
 [rerere]
 	enabled = true
+	autoupdate = true
 [branch]
 	sort = -committerdate
 [column]
@@ -40,6 +47,8 @@
 	format = ssh
 [rebase]
 	autoStash = true
+	autoSquash = true
+	updateRefs = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [filter "lfs"]
@@ -47,3 +56,11 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[tag]
+	sort = version:refname
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
