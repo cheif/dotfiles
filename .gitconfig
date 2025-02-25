@@ -23,10 +23,6 @@
 [init]
     templatedir = ~/.git/templates/
 	defaultBranch = main
-
-[bontouch]
-    email = dan.berglund@bontouch.com
-    regex = "*/bontouch/*"
 [core]
 	editor = nvim
 	untrackedCache = true
