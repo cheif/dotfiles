@@ -10,12 +10,13 @@ return {
                 highlight = { enable = false },
                 indent = { enable = true },
                 ensure_installed = {
-                    'org', 'swift', 'rust', 'toml', 'go', 'typescript', 'tsx', 'beancount', 
+                    'swift', 'rust', 'toml', 'go', 'typescript', 'tsx', 'beancount',
                     'lua',
                     'vim',
                     'vimdoc',
                     'luadoc'
                 },
+                ignore_install = { 'org' },
                 sync_install = false,
             }
         end,
