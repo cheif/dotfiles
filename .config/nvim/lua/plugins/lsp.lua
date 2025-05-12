@@ -10,10 +10,17 @@ return {
             local lspconfig = require("lspconfig")
             local telescope = require("telescope.builtin")
             lspconfig.sourcekit.setup {
-                capabilities = capabilities
+                capabilities = capabilities,
+                filetypes = { "swift" },
             }
             lspconfig.gopls.setup {
                 capabilities = capabilities
+            }
+            lspconfig.clangd.setup {
+                capabilities = capabilities,
+
+                -- Use clang from homebrew
+                cmd = { '/opt/homebrew/opt/llvm/bin/clangd' }
             }
 
             vim.api.nvim_create_autocmd('LspAttach', {
