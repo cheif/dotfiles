@@ -32,6 +32,10 @@ vim.opt.foldenable = false
 
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.diagnostic.config({
+    virtual_text = true,
+    virtual_lines = true
+})
 
 
 -- Terminal settings
