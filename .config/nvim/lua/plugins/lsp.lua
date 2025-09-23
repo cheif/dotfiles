@@ -5,18 +5,17 @@ return {
             "hrsh7th/cmp-nvim-lsp",
             "nvim-telescope/telescope.nvim",
         },
-        config = function()
+        setup = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local lspconfig = require("lspconfig")
             local telescope = require("telescope.builtin")
-            lspconfig.sourcekit.setup {
+            vim.lsp.config.sourcekit.setup {
                 capabilities = capabilities,
                 filetypes = { "swift" },
             }
-            lspconfig.gopls.setup {
+            vim.lsp.config.gopls.setup {
                 capabilities = capabilities
             }
-            lspconfig.clangd.setup {
+            vim.lsp.config.clangd.setup {
                 capabilities = capabilities,
 
                 -- Use clang from homebrew
