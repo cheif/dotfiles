@@ -10,6 +10,7 @@ return {
             vim.lsp.config('sourcekit', {
                 capabilities = capabilities,
                 filetypes = { "swift" },
+                cmd = { vim.trim(vim.fn.system('xcrun -f sourcekit-lsp')) }
             })
             vim.lsp.enable('gopls')
             vim.lsp.config('gopls', {
