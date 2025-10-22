@@ -4,21 +4,24 @@ return {
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
         },
-        setup = function()
+        config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            vim.lsp.config.sourcekit.setup {
+            vim.lsp.enable('sourcekit')
+            vim.lsp.config('sourcekit', {
                 capabilities = capabilities,
                 filetypes = { "swift" },
-            }
-            vim.lsp.config.gopls.setup {
+            })
+            vim.lsp.enable('gopls')
+            vim.lsp.config('gopls', {
                 capabilities = capabilities
-            }
-            vim.lsp.config.clangd.setup {
+            })
+            vim.lsp.enable('clangd')
+            vim.lsp.config('clangd', {
                 capabilities = capabilities,
 
                 -- Use clang from homebrew
                 cmd = { '/opt/homebrew/opt/llvm/bin/clangd' }
-            }
+            })
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 desc = 'LSP Actions',
