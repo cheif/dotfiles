@@ -3,11 +3,9 @@ return {
         "neovim/nvim-lspconfig",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
-            "nvim-telescope/telescope.nvim",
         },
         setup = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local telescope = require("telescope.builtin")
             vim.lsp.config.sourcekit.setup {
                 capabilities = capabilities,
                 filetypes = { "swift" },
@@ -32,9 +30,6 @@ return {
                     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
                     vim.keymap.set('n', '<space>wl', function()
                         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-                    end, opts)
-                    vim.keymap.set('n', '<space>d', function()
-                        telescope.diagnostics()
                     end, opts)
                     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
                     vim.keymap.set('n', '<space>f', function()

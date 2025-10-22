@@ -10,7 +10,9 @@ return {
             vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
             vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
-
+            vim.keymap.set('n', '<space>d', function()
+                builtin.diagnostics()
+            end, opts)
         end,
     }
 }
