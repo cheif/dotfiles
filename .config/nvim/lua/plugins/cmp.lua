@@ -10,11 +10,19 @@ return {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-buffer",
+            "hrsh7th/vim-vsnip",
         },
 
         config = function()
             local cmp = require('cmp')
             local opts = {
+                -- Snippets
+                snippet = {
+                    -- REQUIRED - you must specify a snippet engine
+                    expand = function(args)
+                        vim.fn["vsnip#anonymous"](args.body)
+                    end,
+                },
                 -- Where to get completion results from
                 sources = cmp.config.sources {
                     { name = "nvim_lsp" },
