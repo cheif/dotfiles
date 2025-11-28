@@ -5,7 +5,12 @@ return {
         config = function()
             require('telescope').setup({
                 defaults = {
-                    layout_strategy = 'vertical'
+                    layout_strategy = 'vertical',
+                    mappings = {
+                        i = {
+                            ['<c-d>'] = require('telescope.actions').delete_buffer
+                        }
+                    }
                 }
             })
             local builtin = require('telescope.builtin')
