@@ -10,7 +10,6 @@ return {
             vim.lsp.config('sourcekit', {
                 capabilities = capabilities,
                 filetypes = { "swift" },
-                cmd = { vim.trim(vim.fn.system('xcrun -f sourcekit-lsp')) }
             })
             vim.lsp.enable('gopls')
             vim.lsp.config('gopls', {
@@ -18,10 +17,7 @@ return {
             })
             vim.lsp.enable('clangd')
             vim.lsp.config('clangd', {
-                capabilities = capabilities,
-
-                -- Use clang from homebrew
-                cmd = { '/opt/homebrew/opt/llvm/bin/clangd' }
+                capabilities = capabilities
             })
 
             vim.api.nvim_create_autocmd('LspAttach', {
