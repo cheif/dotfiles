@@ -19,13 +19,17 @@ return {
                     require("neotest-swift-testing"),
                 }
             })
-            vim.keymap.set('n', '<leader>tt', function()
+            vim.keymap.set('n', '<leader>tc', function()
                 neotest.run.run()
             end, opts)
             vim.keymap.set('n', '<leader>tf', function()
                 neotest.run.run(vim.fn.expand('%'))
             end, opts)
+            vim.keymap.set('n', '<leader>tt', function()
+                neotest.run.run_last()
+            end, opts)
             vim.keymap.set('n', '<leader>ts', neotest.summary.toggle, opts)
+            vim.keymap.set('n', '<leader>to', neotest.output_panel.toggle, opts)
         end
     }
 }
