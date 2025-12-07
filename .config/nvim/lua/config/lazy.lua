@@ -37,12 +37,36 @@ vim.diagnostic.config({
     virtual_lines = true
 })
 
+-- Make keymap
+vim.keymap.set('n', '<leader>mm', '<cmd>make<CR>', opts)
+
 
 -- Terminal settings
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]],{noremap=true})
 
-local terminal_channel = nil
+function get_first_terminal()
+    terminal_chans = {}
+
+    for _, chan in pairs(vim.api.nvim_list_chans()) do
+        if chan["mode"] == "terminal" and chan["pty"] ~= "" then
+            table.insert(terminal_chans, chan)
+        end
+    end
+
+    table.sort(terminal_chans, function(left, right)
+        return left["buffer"] < right["buffer"]
+    end)
+
+    local first = next(terminal_chans)
+    if first == nil then
+        return nil
+    else
+        return terminal_chans[1]["id"]
+    end
+end
+
 vim.keymap.set('n', '<space>r', function()
+    terminal_channel = get_first_terminal()
     -- If we don't have a terminal open, open one and wait for command
     if not terminal_channel then
         vim.cmd.vnew()
