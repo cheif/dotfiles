@@ -17,7 +17,15 @@ return {
                         runner = "gotestsum"
                     }),
                     require("neotest-swift-testing"),
-                }
+                },
+                icons = {
+                    failed = "❌",
+                    passed = "✅",
+                    running = "⏳",
+                    skipped = "⏭️",
+                    unknown = "❓",
+                    watching = "👀"
+                },
             })
             vim.keymap.set('n', '<leader>tc', function()
                 neotest.run.run()
@@ -26,6 +34,7 @@ return {
                 neotest.run.run(vim.fn.expand('%'))
             end, opts)
             vim.keymap.set('n', '<leader>tt', function()
+                neotest.output_panel.clear()
                 neotest.run.run_last()
             end, opts)
             vim.keymap.set('n', '<leader>ts', neotest.summary.toggle, opts)
