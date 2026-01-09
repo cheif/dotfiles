@@ -8,6 +8,7 @@ return {
             "nvim-treesitter/nvim-treesitter",
             "fredrikaverpil/neotest-golang",
             "mmllr/neotest-swift-testing",
+            "rcasia/neotest-java",
         },
         config = function() 
             local neotest = require("neotest")
@@ -17,6 +18,7 @@ return {
                         runner = "gotestsum"
                     }),
                     require("neotest-swift-testing"),
+                    require("neotest-java"),
                 },
                 icons = {
                     failed = "❌",

@@ -3,6 +3,7 @@ return {
         "neovim/nvim-lspconfig",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
+            "nvim-java/nvim-java",
         },
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -19,6 +20,9 @@ return {
             vim.lsp.config('clangd', {
                 capabilities = capabilities
             })
+
+            require('java').setup()
+            vim.lsp.enable('jdtls')
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 desc = 'LSP Actions',

@@ -14,7 +14,8 @@ return {
                     'lua',
                     'vim',
                     'vimdoc',
-                    'luadoc'
+                    'luadoc',
+                    'java'
                 },
                 ignore_install = { 'org' },
                 sync_install = false,
