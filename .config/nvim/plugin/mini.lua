@@ -1,3 +1,7 @@
 vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 require('mini.cmdline').setup()
 require('mini.files').setup()
+require('mini.notify').setup()
+require('mini.diff').setup()
+require('mini.git').setup()
+require('mini.comment').setup()
