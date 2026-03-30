@@ -5,8 +5,8 @@ return {
     config = function()
         -- Setup orgmode
         require('orgmode').setup({
-            org_agenda_files = {'~/repos/org/*'},
-            org_default_notes_file = '~/repos/org/refile.org',
+            org_agenda_files = {'~/org/*'},
+            org_default_notes_file = '~/org/refile.org',
             org_log_into_drawer = 'LOGBOOK',
             org_capture_templates = {
                 t = {
@@ -16,7 +16,7 @@ return {
                 l = {
                     description = '[Maker]log',
                     template = '* %?',
-                    target = '~/repos/org/Makerlog.org',
+                    target = '~/org/Makerlog.org',
                     datetree = true,
                 },
             }
