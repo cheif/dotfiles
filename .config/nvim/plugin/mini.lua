@@ -35,3 +35,45 @@ end, opts)
 vim.keymap.set('n', '<space>d', function()
     extra.diagnostic()
 end, opts)
+
+-- LSP/completion
+vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
+vim.lsp.enable('sourcekit')
+vim.lsp.config('sourcekit', {
+    filetypes = { "swift" },
+})
+vim.lsp.enable('gopls')
+vim.lsp.enable('clangd')
+
+vim.api.nvim_create_autocmd('LspAttach', {
+    desc = 'LSP Actions',
+    callback = function(args)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+        vim.keymap.set('n', '<space>f', function()
+            vim.lsp.buf.format { async = true }
+        end, opts)
+    end,
+})
+vim.api.nvim_create_autocmd('BufWritePre', {
+    callback = function()
+        vim.lsp.buf.format()
+    end
+})
+
+
+
+local imap_expr = function(lhs, rhs)
+    vim.keymap.set('i', lhs, rhs, { expr = true })
+end
+imap_expr('<Tab>',   [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
+imap_expr('<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
+require('mini.snippets').setup()
+require('mini.completion').setup()
+
+
+-- Java
+-- vim.pack.add({ 'https://github.com/nvim-java/nvim-java' })
+-- require('java').setup()
+-- vim.lsp.enable('jdtls')
