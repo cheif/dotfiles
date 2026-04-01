@@ -16,6 +16,10 @@
       "rev": "8e2084bf5e40c79c1f42210a6ef96a0a4793a763",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
+    "orgmode": {
+      "rev": "2fc30d36fd1c3e6086a7424858e19a52a29ae937",
+      "src": "https://github.com/nvim-orgmode/orgmode"
+    },
     "solarized.nvim": {
       "rev": "c0dfe1cbfabd93b546baf5f1408f5df7e02e2050",
       "src": "https://github.com/maxmx03/solarized.nvim"
