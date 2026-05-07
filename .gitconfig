@@ -10,7 +10,6 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 [merge]
 	ff = only
-	tool = vimdiff
 [pull]
 	rebase = true
 [diff]
@@ -19,6 +18,10 @@
 	colorMoved = plain
 	mnemonicPrefix = true
 	renames = true
+[difftool]
+    prompt = false
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [init]
     templatedir = ~/.git/templates/
@@ -44,8 +47,6 @@
 [rebase]
 	autoStash = true
 	autoSquash = true
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
